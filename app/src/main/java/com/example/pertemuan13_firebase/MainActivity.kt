@@ -17,10 +17,35 @@ class MainActivity : AppCompatActivity() {
         MutableLiveData<List<Budget>>()
     }
 
+    private val budgetClollectionRef = firestore.collection("budgets")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
+    private fun getAllBudgets() {
+        budgetClollectionRef.addSnapshotListener { snapshot, error ->
+            if (error != null) {
+                return@addSnapshotListener
+            }
+            val budgets = arrayListOf<Budget>()
+            snapshot?.forEach {
+                documentReference ->
+                budgets.add(
+                    Budget(
+                        documentReference.id,
+                        documentReference.get("nominal").toString(),
+                        documentReference.get("description").toString(),
+                        documentReference.get("date").toString()
+                    )
+                )
+            }
+
+            if (budgets != null) {
+                budgetListLiveData.postValue(budgets)
+            }
+        }
+    }
 }
