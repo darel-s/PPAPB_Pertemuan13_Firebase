@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "392171776712",
+    "project_id": "pertemuan13-firebase",
+    "storage_bucket": "pertemuan13-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392171776712:android:c68ffd5789420a002d13fd",
+        "android_client_info": {
+          "package_name": "com.example.pertemuan13_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC58tn5-dJhaVuWilxpvgt9YKh8eHHfgBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
