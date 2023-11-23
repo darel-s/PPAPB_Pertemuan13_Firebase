@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                 val budget = Budget("", nominal, description, date)
                 updateBudget(budget)
                 setEmptyField()
+                updateId = ""
             }
 
             listView.setOnItemClickListener {
